@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Quiz Hub</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- spinner  -->
+
+    <div class="spinner spinner-hidden">
+      <img
+        src="https://cdn-icons-png.flaticon.com/128/7854/7854835.png"
+        alt=""
+      />
+    </div>
+
+    <!-- Navigation NAMASTE🙏  -->
+
+    <div class="navigation">
+      <span id="element"></span>
+
+      <div class="check-highScore">
+        <p>Check Highscore</p>
+      </div>
+    </div>
+
+    <div class="highscoreModal modal-hidden">
+      <p>You'r Highscore is 0</p>
+    </div>
+
+    <!-- Select category section  -->
+
+    <div class="category">
+      <h1>SELECT CATEGORY</h1>
+
+      <div class="category-container">
+        <div class="card gk" value="9">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/8132/8132468.png"
+            alt=""
+          />
+        </div>
+
+        <div class="card book" value="10">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/3145/3145765.png"
+            alt=""
+          />
+        </div>
+
+        <div class="card flim" value="11">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/4567/4567397.png"
+            alt=""
+          />
+        </div>
+
+        <div class="card music" value="12">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/2995/2995101.png"
+            alt=""
+          />
+        </div>
+
+        <div class="card tv" value="14">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/4358/4358295.png"
+            alt=""
+          />
+        </div>
+
+        <div class="card videogame" value="15">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/808/808439.png"
+            alt=""
+          />
+        </div>
+
+        <div class="card boardgame" value="16">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/5190/5190878.png"
+            alt=""
+          />
+        </div>
+
+        <div class="card nature" value="17">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/3762/3762030.png"
+            alt=""
+          />
+        </div>
+
+        <div class="card computers" value="18">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/2821/2821637.png"
+            alt=""
+          />
+        </div>
+
+        <div class="card maths" value="19">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/1739/1739515.png"
+            alt=""
+          />
+        </div>
+
+        <div class="card mythology" value="20">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/3764/3764539.png"
+            alt=""
+          />
+        </div>
+
+        <div class="card sports" value="21">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/857/857418.png"
+            alt=""
+          />
+        </div>
+
+        <div class="card geography" value="22">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/3880/3880185.png"
+            alt=""
+          />
+        </div>
+
+        <div class="card history" value="23">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/2682/2682065.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- start quiz button  -->
+
+    <div class="start-quiz-button">
+      <button>Let's Begin the quiz</button>
+    </div>
+
+    <!-- Take Quiz section  -->
+
+    <div class="quiz-section">
+      <div class="upper-section">
+        <h3>Quiz Hub</h3>
+
+        <div class="time-left">
+          <p>Time Left : 20</p>
+        </div>
+      </div>
+
+      <div class="main-section">
+        <!-- <p class="question">1.What does HTML stands for ?</p>
+
+        <p class="answer answer-1">HyperText Markup language</p>
+        <p class="answer answer-2">HyperText Markup languag</p>
+        <p class="answer answer-3">HyperText Markup languages</p>
+        <p class="answer answer-4">HyperText Markups languagess</p> -->
+      </div>
+
+      <div class="bottom-section">
+        <p>0 of 10 Questions</p>
+
+        <button class="next">Next</button>
+      </div>
+    </div>
+
+    <!-- Replay button  -->
+
+    <!-- <div class="screen-replay">
+      <button class="replay-btn">REPLAY</button>
+      <img
+        src="https://cdn-icons-png.flaticon.com/128/1142/1142347.png"
+        alt=""
+      />
+    </div> -->
+
+    <!-- Audios -->
+
+    <audio class="right-audio">
+      <source src="right.mp3" type="audio/mp3" />
+    </audio>
+
+    <audio class="wrong-audio">
+      <source src="wrong.mp3" type="audio/mp3" />
+    </audio>
+
+    <audio class="time-audio">
+      <source src="time.mp3" type="audio/mp3" />
+    </audio>
+
+    <audio class="winner-audio">
+      <source src="winner.mp3" type="audio/mp3" />
+    </audio>
+
+    <audio class="high-audio">
+      <source src="highscore.mp3" type="audio/mp3" />
+    </audio>
+
+    <!-- Modal windows  -->
+
+    <!-- Quiz instruction window  -->
+
+    <div class="instr-window modal-hidden">
+      <div class="upper-section">
+        <h3>Rules of the quiz</h3>
+      </div>
+
+      <div class="middle-section">
+        <p>💥 You have only 20seconds for each question</p>
+        <p>💥 If you don't select any option then score will not be added</p>
+        <p>💥 You can't select an option after once the timer goes off</p>
+        <p>💥 You can't exist while playing the quiz</p>
+      </div>
+
+      <div class="bottom-section">
+        <button class="exit">Exit Quiz</button>
+        <button class="continue">Continue</button>
+      </div>
+    </div>
+
+    <!-- Score display section  -->
+
+    <div class="score-section modal-hidden">
+      <div class="score-upper-section">
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/9281/9281502.png"
+          alt=""
+          class="congrats-img"
+        />
+      </div>
+
+      <div class="score-middle-section">
+        <p>Congratulations🎉You have scored 5 out of 10</p>
+      </div>
+
+      <div class="score-bottom-section">
+        <button class="score-exit">Exit</button>
+        <button class="score-replay">Replay</button>
+      </div>
+    </div>
+
+    <div class="animation modal-hidden">
+      <p>HIGHSCORE ACHIEVED 🎉</p>
+    </div>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["WELCOME...", "NAMASTE🙏"],
+        typeSpeed: 60,
+      });
+    </script>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,624 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  @import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
+  
+  body {
+    background-color: #2f2440;
+  }
+  
+  .spinner {
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    z-index: 500;
+  }
+  
+  .spinner img {
+    width: 80%;
+    animation-name: load;
+    animation-iteration-count: infinite;
+    animation-duration: 1.2s;
+    animation-direction: alternate;
+  }
+  
+  @keyframes load {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .spinner-hidden {
+    display: none;
+  }
+  /* Top welcome message section  */
+  
+  .navigation {
+    display: flex;
+    margin-top: 1%;
+    margin-left: 40%;
+  }
+  
+  .navigation .check-highScore {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    letter-spacing: 1px;
+    font-weight: 100px;
+    cursor: pointer;
+    margin-top: 2%;
+    margin-left: 45%;
+    background-color: blanchedalmond;
+    text-align: center;
+    padding: 1% 1% 0%;
+    box-shadow: rgba(255, 255, 255, 0.185) 1.95px 1.95px 2.6px;
+  }
+  
+  .navigation .check-highScore:active {
+    transform: scale(0.89);
+  }
+  
+  #element {
+    font-size: 45px;
+    color: aliceblue;
+    font-family: "Hammersmith One", sans-serif;
+    letter-spacing: 2px;
+    color: #c6b79b;
+    font-weight: 550;
+  }
+  
+  /* Highscore Modal  */
+  
+  .highscoreModal {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 10px 20px,
+      rgba(0, 0, 0, 0.592) 0px 6px 6px;
+    background-color: rgb(0, 85, 255);
+    width: 17%;
+    padding: 1%;
+    text-align: center;
+    z-index: 500;
+    color: white;
+    font-size: 25px;
+  }
+  
+  /* Category section  */
+  
+  .category {
+    margin-top: 5%;
+    margin-left: 5%;
+  }
+  
+  .category h1 {
+    color: white;
+    font-weight: 550;
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  /* Making the category conatiner flex  */
+  
+  .category .category-container {
+    margin-left: -5%;
+    margin-top: 2%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Implementing the css to each card  */
+  .category .category-container .card {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    background-color: white;
+    width: 8%;
+    border-radius: 5px;
+    box-shadow: rgba(255, 255, 255, 0.35) 1.95px 1.95px 2.6px;
+  }
+  
+  .category .category-container .card:hover {
+    background-color: rgb(108, 2, 100);
+    box-shadow: rgba(0, 0, 0, 0.35) 1.95px 1.95px 2.6px;
+  }
+  
+  .category .category-container .card img {
+    width: 80%;
+    padding: 5%;
+  }
+  
+  .category .category-container .card p {
+    margin: 5%;
+  }
+  
+  /* Start the quiz section  */
+  
+  .start-quiz-button {
+    text-align: center;
+  }
+  .start-quiz-button button {
+    padding: 0.8% 2%;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 10px 20px,
+      rgba(0, 0, 0, 0.592) 0px 6px 6px;
+    background-color: rgb(0, 145, 255);
+    border: none;
+    border-radius: 2px;
+    color: white;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 20px;
+  }
+  
+  .start-quiz-button button:active {
+    transform: scale(0.8);
+  }
+  /* Quiz section  */
+  
+  .quiz-section {
+    margin-top: 5%;
+    margin-left: 35%;
+    margin-bottom: 5%;
+    /* text-align: center; */
+    background-color: aliceblue;
+    width: 30%;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 10px 20px,
+      rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-radius: 8px;
+  }
+  
+  .quiz-section .upper-section {
+    padding: 2%;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 20px, rgba(0, 0, 0, 0.2) 0px 6px 6px;
+    margin-bottom: 5%;
+  }
+  
+  .quiz-section .upper-section h3 {
+    margin-right: 55%;
+    font-size: 17px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  .quiz-section .upper-section .time-left {
+    background-color: rgb(0, 183, 255);
+    /* color: white; */
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    padding: 1%;
+    font-weight: 550;
+  }
+  
+  /* Quiz main question answer section  */
+  
+  .quiz-section .main-section .question {
+    margin-left: 5%;
+    font-size: 30px;
+    margin-bottom: 5%;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .quiz-section .main-section .answer {
+    cursor: pointer;
+    margin-bottom: 5%;
+    padding: 2%;
+    margin-left: 25%;
+    text-align: left;
+    border: 2px solid black;
+    width: 50%;
+    border-radius: 10px;
+    background-color: rgba(0, 255, 255, 0.107);
+    font-weight: 400;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  }
+  
+  /* Quiz bottom section  */
+  
+  .quiz-section .bottom-section {
+    /* margin-left: 5%; */
+    border-top: 1px solid rgba(0, 0, 0, 0.178);
+    display: flex;
+  }
+  
+  .quiz-section .bottom-section p {
+    font-size: 20px;
+    margin-left: 5%;
+    margin-right: 30%;
+    padding: 3%;
+    margin-bottom: 2%;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  }
+  
+  .quiz-section .bottom-section .next {
+    width: 20%;
+    height: 15%;
+    padding: 1% 5%;
+    margin-top: 3%;
+    border-radius: 7px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: #2f2440;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Instruction modal window  */
+  
+  .instr-window {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 10px 20px,
+      rgba(0, 0, 0, 0.592) 0px 6px 6px;
+    background-color: rgb(0, 162, 255);
+    width: 25%;
+    z-index: 100;
+  }
+  
+  .instr-window .upper-section {
+    padding: 2%;
+    text-align: center;
+    color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    font-size: 20px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+  }
+  
+  .instr-window .middle-section {
+    padding: 3%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    margin-bottom: 5%;
+  }
+  
+  .instr-window .middle-section p {
+    margin-bottom: 5%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+  }
+  
+  .instr-window .bottom-section {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 3%;
+  }
+  
+  .instr-window .bottom-section .exit {
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 3% 2%;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+  }
+  
+  .instr-window .bottom-section .continue {
+    background-color: greenyellow;
+    border: none;
+    padding: 3% 2%;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+  }
+  
+  .modal-hidden {
+    display: none;
+  }
+  
+  /* Score modal window  */
+  
+  .score-section {
+    position: absolute;
+    top: 85%;
+    left: 38%;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 10px 20px,
+      rgba(0, 0, 0, 0.592) 0px 6px 6px;
+    background-color: rgb(0, 162, 255);
+    width: 25%;
+  }
+  
+  .score-section .score-upper-section {
+    padding: 2%;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+  }
+  
+  .score-section .score-middle-section {
+    padding: 3%;
+    margin-top: 5%;
+  }
+  
+  .score-section .score-middle-section p {
+    margin-bottom: 5%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+  }
+  
+  .score-section .score-bottom-section {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 3%;
+  }
+  
+  .score-section .score-bottom-section .score-exit {
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 2% 4%;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+  }
+  
+  .score-section .score-bottom-section .score-replay {
+    background-color: greenyellow;
+    border: none;
+    padding: 3% 2%;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+  }
+  
+  .animation {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    background-color: Red;
+    width: 100vw;
+    font-size: 20px;
+    color: white;
+    letter-spacing: 2px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0.8% 0%;
+    text-align: center;
+  }
+  
+  /* Media queries  */
+  
+  /* upto 400px  */
+  
+  @media only screen and (max-width: 25em) {
+    * {
+      width: inherit;
+    }
+    .spinner {
+      position: absolute;
+      top: 30%;
+      left: 40%;
+    }
+  
+    .spinner img {
+      width: 50%;
+    }
+  
+    .spinner-hidden {
+      display: none;
+    }
+    /* Top welcome message section  */
+  
+    .navigation {
+      display: flex;
+      margin-top: 5%;
+      margin-left: 12%;
+    }
+  
+    .navigation .check-highScore {
+      margin-top: 2%;
+      margin-left: 12%;
+    }
+  
+    .navigation .check-highScore p {
+      font-size: 10px;
+      margin-top: 5%;
+    }
+  
+    #element {
+      font-size: 25px;
+    }
+  
+    /* Highscore Modal  */
+  
+    .highscoreModal {
+      position: absolute;
+      top: 30%;
+      left: 20%;
+      width: 70%;
+      padding: 0%;
+    }
+  
+    .highscoreModal p {
+      padding: 5% 0% 5% 2%;
+      font-size: 20px;
+    }
+  
+    /* Category section  */
+  
+    .category {
+      margin-top: 15%;
+      margin-left: 5%;
+    }
+  
+    .category h1 {
+      font-size: 15px;
+    }
+  
+    /* Making the category conatiner flex  */
+  
+    .category .category-container {
+      margin-top: 7%;
+    }
+  
+    /* Implementing the css to each card  */
+    .category .category-container .card {
+      width: 12%;
+    }
+  
+    /* Start the quiz section  */
+  
+    .start-quiz-button {
+      margin-top: 7%;
+    }
+  
+    .start-quiz-button button {
+      padding: 0.8% 2%;
+      font-size: 20px;
+    }
+  
+    /* Quiz section  */
+  
+    .quiz-section {
+      margin-top: 15%;
+      margin-left: 5%;
+      width: 90%;
+    }
+  
+    .quiz-section .upper-section {
+      padding: 2%;
+      margin-bottom: 5%;
+      width: 100%;
+    }
+  
+    .quiz-section .upper-section h3 {
+      margin-right: 45%;
+      font-size: 12px;
+    }
+  
+    .quiz-section .upper-section .time-left {
+      font-size: 10px;
+    }
+  
+    /* Quiz main question answer section  */
+  
+    .quiz-section .main-section .question {
+      font-size: 15px;
+    }
+  
+    .quiz-section .main-section .answer {
+      margin-bottom: 5%;
+      margin-left: 30%;
+      border: 1px solid black;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+  
+    /* Quiz bottom section  */
+  
+    .quiz-section .bottom-section {
+      width: 100%;
+    }
+  
+    .quiz-section .bottom-section p {
+      font-size: 15px;
+      margin-right: 3%;
+    }
+  
+    .quiz-section .bottom-section .next {
+      width: 20%;
+      padding: 1%;
+      margin-left: -30%;
+      font-size: 10px;
+    }
+  
+    .instr-window {
+      position: absolute;
+      top: 30%;
+      left: 4%;
+      width: 90%;
+      z-index: 100;
+    }
+  
+    .instr-window .upper-section {
+      width: 100%;
+      font-size: 15px;
+    }
+  
+    .instr-window .middle-section {
+      width: 100%;
+    }
+  
+    .instr-window .middle-section p {
+      font-size: 13px;
+    }
+  
+    .instr-window .bottom-section {
+      width: 80%;
+      margin-left: 12%;
+    }
+  
+    .instr-window .bottom-section .exit {
+      padding: 1%;
+      font-size: 10px;
+      width: 50%;
+    }
+  
+    .instr-window .bottom-section .continue {
+      padding: 1%;
+      font-size: 10px;
+      width: 50%;
+      margin-left: 5%;
+    }
+  
+    .modal-hidden {
+      display: none;
+    }
+  
+    /* Score modal window  */
+  
+    .score-section {
+      position: absolute;
+      top: 30%;
+      left: 12%;
+      width: 80%;
+      z-index: 100;
+    }
+  
+    .score-section .score-upper-section {
+      width: 100%;
+      padding: 1%;
+    }
+  
+    .score-section .score-upper-section img {
+      width: 20%;
+    }
+  
+    .score-section .score-middle-section {
+      width: 100%;
+      padding: 3%;
+      margin-top: 5%;
+    }
+  
+    .score-section .score-middle-section p {
+      margin-bottom: 5%;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 15px;
+    }
+  
+    .score-section .score-bottom-section {
+      width: 100%;
+    }
+  
+    .score-section .score-bottom-section .score-exit {
+      padding: 1%;
+      font-size: 10px;
+      width: 50%;
+    }
+  
+    .score-section .score-bottom-section .score-replay {
+      padding: 1%;
+      font-size: 10px;
+      width: 50%;
+      margin-left: 5%;
+    }
+  
+    .animation {
+      font-size: 15px;
+    }
+  }
